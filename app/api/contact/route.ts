@@ -1,14 +1,32 @@
-// app/api/contact/route.ts
-
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Only initialize Resend if API key is available
+const resend = process.env.RESEND_API_KEY 
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 export async function POST(request: Request) {
+  // Check if Resend is configured
+  if (!resend) {
+    console.error('Resend API key not configured');
+    return NextResponse.json(
+      { success: false, error: 'Email service not configured. Please contact us directly.' },
+      { status: 503 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { name, phone, email, message } = body;
+
+    // Validate required fields
+    if (!name || !phone || !email || !message) {
+      return NextResponse.json(
+        { success: false, error: 'All fields are required' },
+        { status: 400 }
+      );
+    }
 
     // Send email using Resend
     const data = await resend.emails.send({
@@ -36,8 +54,13 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
-      { success: false, error: 'Failed to send message' },
+      { success: false, error: 'Failed to send message. Please try again or call us directly.' },
       { status: 500 }
     );
   }
+}
+
+// Handle OPTIONS request for CORS
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200 });
 }
