@@ -1,17 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'impro.usercontent.one',
-        },
-        {
-          protocol: 'https',
-          hostname: '*.princeclean.de',
-        },
-      ],
-    },
-  };
+  output: 'standalone',
+  images: {
+    unoptimized: true,
+  },
+};
 
-  module.exports = nextConfig;
+module.exports = nextConfig;
