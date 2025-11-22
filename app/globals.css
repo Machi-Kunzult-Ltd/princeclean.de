@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white hover:shadow-xl hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-[#1e3a8a] border-2 border-[#1e3a8a] hover:bg-[#1e3a8a] hover:text-white;
+  }
+
+  .btn-white {
+    @apply bg-white text-[#1e3a8a] hover:bg-gray-100 shadow-lg;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-white border-2 border-white hover:bg-white hover:text-[#1e3a8a];
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-gray-700 hover:text-[#1e3a8a] font-medium transition-colors;
+  }
+
+  /* Sections */
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1e3a8a] text-center;
+  }
+
+  .section-subtitle {
+    @apply text-base sm:text-lg lg:text-xl text-gray-600 text-center max-w-3xl mx-auto;
+  }
+
+  /* Cards */
+  .service-card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-6 flex flex-col h-full;
+  }
+
+  .service-icon {
+    @apply w-full h-48 bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl mb-6 flex items-center justify-center text-6xl;
+  }
+
+  .service-title {
+    @apply text-xl sm:text-2xl font-bold text-[#1e3a8a] mb-3;
+  }
+
+  .service-description {
+    @apply text-gray-600 leading-relaxed flex-grow;
+  }
+
+  /* Stats */
+  .stat-card {
+    @apply text-center text-white;
+  }
+
+  .stat-number {
+    @apply font-bold mb-2;
+  }
+
+  .stat-text {
+    @apply opacity-90;
+  }
+
+  /* Process Steps */
+  .process-step {
+    @apply bg-white rounded-2xl shadow-lg p-6 sm:p-8 text-center relative hover:shadow-xl transition-all duration-300;
+  }
+
+  .step-number {
+    @apply absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full text-white font-bold flex items-center justify-center shadow-lg;
+  }
+
+  /* Benefits */
+  .benefit-card {
+    @apply flex gap-4 items-start p-4 sm:p-6 bg-gray-50 rounded-2xl border-l-4 border-blue-500 hover:shadow-lg transition-all duration-300;
+  }
+
+  .benefit-icon {
+    @apply w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white flex items-center justify-center text-xl sm:text-2xl flex-shrink-0;
+  }
+
+  /* Gradients */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6];
+  }
+
+  .hero-gradient {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100;
+  }
+
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-blue {
+    @apply bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6];
+  }
+
+  .bg-gradient-green {
+    @apply bg-gradient-to-r from-[#059669] to-[#10b981];
+  }
+
+  .bg-gradient-red {
+    @apply bg-gradient-to-r from-[#dc2626] to-[#ef4444];
+  }
+
+  .bg-gradient-orange {
+    @apply bg-gradient-to-r from-[#ea580c] to-[#f97316];
+  }
+
+  /* Price Tables */
+  .price-table {
+    @apply w-full bg-white rounded-2xl shadow-lg overflow-hidden;
+  }
+
+  .price-table th {
+    @apply bg-[#1e3a8a] text-white px-4 py-3 text-left font-semibold;
+  }
+
+  .price-table td {
+    @apply px-4 py-3 border-b border-gray-200;
+  }
+
+  .price-table tr:hover {
+    @apply bg-gray-50;
+  }
+
+  .price-highlight {
+    @apply text-[#3b82f6] font-bold text-lg;
+  }
+
+  /* Forms */
+  .form-group {
+    @apply mb-6;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-[#1e3a8a] mb-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/20 outline-none transition-all;
+  }
+
+  .form-textarea {
+    @apply w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#3b82f6] focus:ring-2 focus:ring-[#3b82f6]/20 outline-none transition-all resize-y min-h-[120px];
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
