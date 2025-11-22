@@ -25,9 +25,9 @@ export default function WeiterePage() {
       icon: "🪟",
       title: "Vorhangservice",
       price: "58€ / 29€",
-      subtitle: "Abnahme & Aufhängen / nur Aufhängen",
+      subtitle: "Abnahme & Wiedereinhängen / nur Wiedereinhängen",
       description:
-        "Nehmen Sie den Stress aus der Vorhangpflege. Unser Vorhangservice in Berlin umfasst die professionelle Abnahme und das Wiederaufhängen Ihrer Vorhänge. Wählen Sie den vollständigen Service oder nur das Wiederaufhängen, je nach Bedarf.",
+        "Nehmen Sie den Stress aus der Vorhangpflege. Unser Vorhangservice in Berlin umfasst die professionelle Abnahme und das Wiedereinhängen Ihrer Vorhänge. Wählen Sie den vollständigen Service oder nur das Wiedereinhängen, je nach Bedarf.",
     },
   ];
 
@@ -54,26 +54,30 @@ export default function WeiterePage() {
           </p>
         </div>
 
-        {/* Image Placeholder */}
+        {/* Image Section */}
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="w-full h-64 sm:h-80 bg-gradient-to-br from-cyan-100 to-cyan-50 rounded-2xl flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-6xl mb-4">🪟</div>
-              <div className="text-xl font-bold text-gray-700">
-                Fenster- & Hausreinigung
+          <div className="w-full h-64 sm:h-96 bg-gradient-to-br from-blue-100 via-blue-50 to-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2UwZjJmZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNjQiIGZpbGw9IiMzYjgyZjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj7wn5qfPC90ZXh0Pjwvc3ZnPg==')] bg-cover bg-center flex items-center justify-center">
+              <div className="text-center bg-white/80 backdrop-blur-sm p-8 rounded-xl">
+                <div className="text-7xl mb-2">🪟</div>
+                <div className="text-xl font-bold text-[#1e3a8a]">
+                  Fenster- & Hausreinigung
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Intro Text */}
-        <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#1e3a8a] mb-4">
+        {/* Intro Section */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1e3a8a] mb-6">
             💰 Preise für zusätzliche Reinigungsdienstleistungen
           </h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            <strong>Erschwingliche professionelle Reinigungsdienste in Berlin</strong>
+          </p>
           <p className="text-gray-600 leading-relaxed">
-            Erschwingliche professionelle Reinigungsdienste in Berlin – Bei
-            PrinceClean Teppichreinigung Berlin machen wir es Ihnen einfach,
+            Bei PrinceClean Teppichreinigung Berlin machen wir es Ihnen einfach,
             genau zu wissen, wofür Sie bezahlen. Ob Fensterreinigung,
             Hausreinigung oder Vorhangservice – unsere transparenten Preise und
             unser Expertenteam sorgen für eine reibungslose Buchungserfahrung
@@ -82,17 +86,17 @@ export default function WeiterePage() {
         </div>
 
         {/* Services */}
-        <div className="max-w-5xl mx-auto space-y-8 mb-12">
+        <div className="max-w-5xl mx-auto space-y-8 mb-16">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100"
             >
               <div className="p-8">
                 <div className="flex items-start gap-6">
-                  <div className="text-5xl flex-shrink-0">{service.icon}</div>
+                  <div className="text-5xl flex-shrink-0 mt-1">{service.icon}</div>
                   <div className="flex-grow">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                       <div>
                         <h3 className="text-2xl font-bold text-[#1e3a8a] mb-1">
                           {service.title}
@@ -117,50 +121,14 @@ export default function WeiterePage() {
           ))}
         </div>
 
-        {/* Additional Items */}
-        <div className="max-w-5xl mx-auto mb-12">
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-[#1e3a8a] mb-6">
-              Weitere Services
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="flex justify-between items-center bg-white p-4 rounded-lg">
-                <span className="font-medium">Kilowäsche (ungebügelt)</span>
-                <span className="text-[#3b82f6] font-bold text-lg">
-                  4,50€/kg
-                </span>
-              </div>
-              <div className="flex justify-between items-center bg-white p-4 rounded-lg">
-                <span className="font-medium">Imprägnierung (Outdoor)</span>
-                <span className="text-[#3b82f6] font-bold text-lg">5,00€</span>
-              </div>
-              <div className="flex justify-between items-center bg-white p-4 rounded-lg">
-                <span className="font-medium">Rucksack</span>
-                <span className="text-[#3b82f6] font-bold text-lg">15,00€</span>
-              </div>
-              <div className="flex justify-between items-center bg-white p-4 rounded-lg">
-                <span className="font-medium">Textil-Extras</span>
-                <span className="text-[#3b82f6] font-bold text-lg">3,00€</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Note */}
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-blue-50 border-l-4 border-[#3b82f6] p-6 rounded-r-lg mb-12">
-            <p className="text-gray-700">
-              Sofern Sie noch weitere Wünsche oder Fragen haben, sprechen Sie
-              uns einfach an. <strong>Wir sind für Sie da!</strong>
-            </p>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <Link href="/contact" className="btn btn-primary">
-              Jetzt Angebot anfragen
-            </Link>
-          </div>
+        {/* CTA Button */}
+        <div className="text-center mb-16">
+          <Link
+            href="/contact"
+            className="inline-block bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+          >
+            Kontakt
+          </Link>
         </div>
       </div>
     </div>
