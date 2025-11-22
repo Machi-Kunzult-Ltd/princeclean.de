@@ -1,12 +1,12 @@
 // app/components/Header.tsx
 
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,15 +19,23 @@ export default function Header() {
         <div className="container-custom">
           <div className="flex flex-wrap justify-center sm:justify-between items-center gap-2 text-xs sm:text-sm">
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
-              <a href={`tel:${siteConfig.company.phone}`} className="hover:underline whitespace-nowrap">
+              <a
+                href={`tel:${siteConfig.company.phone}`}
+                className="hover:underline whitespace-nowrap"
+              >
                 📞 {siteConfig.company.phone}
               </a>
-              <a href={`mailto:${siteConfig.company.email}`} className="hover:underline hidden md:inline whitespace-nowrap">
+              <a
+                href={`mailto:${siteConfig.company.email}`}
+                className="hover:underline hidden md:inline whitespace-nowrap"
+              >
                 ✉️ {siteConfig.company.email}
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <span className="hidden md:inline whitespace-nowrap">⏰ {siteConfig.company.hours.weekday}</span>
+              <span className="hidden md:inline whitespace-nowrap">
+                ⏰ {siteConfig.company.hours.weekday}
+              </span>
             </div>
           </div>
         </div>
@@ -37,7 +45,10 @@ export default function Header() {
       <nav className="container-custom py-3 sm:py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <Link
+            href="/"
+            className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
+          >
             <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 relative">
               <Image
                 src="/images/assets/logos/princeclean.png"
@@ -51,14 +62,16 @@ export default function Header() {
               <div className="font-bold text-[#1e3a8a] text-sm sm:text-base md:text-lg lg:text-xl leading-tight">
                 PrinceClean Teppichreinigung
               </div>
-              <div className="text-xs sm:text-sm text-gray-600">& Reinigungsservice</div>
+              <div className="text-xs sm:text-sm text-gray-600">
+                & Reinigungsservice
+              </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-4 xl:gap-8">
             {siteConfig.navigation.map((item) =>
-              item.name === 'Preise' ? (
+              item.name === "Preise" ? (
                 <div key={item.name} className="relative group">
                   <button className="flex items-center gap-1 text-[#1e3a8a] font-semibold hover:text-[#3b82f6] transition-colors text-sm xl:text-base">
                     {item.name}
@@ -86,7 +99,10 @@ export default function Header() {
                 </Link>
               )
             )}
-            <Link href="/contact" className="btn btn-primary text-xs xl:text-sm whitespace-nowrap">
+            <Link
+              href="/contact"
+              className="btn btn-primary text-xs xl:text-sm whitespace-nowrap"
+            >
               Jetzt Termin vereinbaren
             </Link>
           </div>
@@ -97,7 +113,11 @@ export default function Header() {
             className="lg:hidden p-2 text-[#1e3a8a] flex-shrink-0"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -106,7 +126,7 @@ export default function Header() {
           <div className="lg:hidden mt-4 pb-4 border-t pt-4">
             <div className="flex flex-col gap-2">
               {siteConfig.navigation.map((item) =>
-                item.name === 'Preise' ? (
+                item.name === "Preise" ? (
                   <div key={item.name}>
                     <button
                       onClick={() => setPricesOpen(!pricesOpen)}
@@ -115,7 +135,7 @@ export default function Header() {
                       {item.name}
                       <ChevronDown
                         className={`w-4 h-4 transition-transform ${
-                          pricesOpen ? 'rotate-180' : ''
+                          pricesOpen ? "rotate-180" : ""
                         }`}
                       />
                     </button>

@@ -1,6 +1,6 @@
 // app/impressum/page.tsx
 
-import { siteConfig } from '@/config/site';
+import { siteConfig } from "@/config/site";
 
 export default function ImpressumPage() {
   return (
@@ -30,11 +30,14 @@ export default function ImpressumPage() {
                   Firmeninformationen
                 </h2>
                 <div className="space-y-2 text-gray-700">
-                  <p className="font-semibold text-lg">PrinceClean Teppichreinigung</p>
+                  <p className="font-semibold text-lg">
+                    PrinceClean Teppichreinigung
+                  </p>
                   <p>Inhaber: Abel Modibo</p>
                   <p>{siteConfig.company.address.street}</p>
                   <p>
-                    {siteConfig.company.address.zip} {siteConfig.company.address.city}
+                    {siteConfig.company.address.zip}{" "}
+                    {siteConfig.company.address.city}
                   </p>
                 </div>
               </div>
@@ -46,26 +49,40 @@ export default function ImpressumPage() {
                 </h2>
                 <div className="space-y-2 text-gray-700">
                   <p>
-                    <span className="font-semibold">Telefon:</span>{' '}
-                    <a href={`tel:${siteConfig.company.phone}`} className="text-[#3b82f6] hover:underline">
+                    <span className="font-semibold">Telefon:</span>{" "}
+                    <a
+                      href={`tel:${siteConfig.company.phone}`}
+                      className="text-[#3b82f6] hover:underline"
+                    >
                       {siteConfig.company.phone}
                     </a>
                   </p>
                   <p>
-                    <span className="font-semibold">Mobil:</span>{' '}
-                    <a href={`tel:${siteConfig.company.mobile}`} className="text-[#3b82f6] hover:underline">
+                    <span className="font-semibold">Mobil:</span>{" "}
+                    <a
+                      href={`tel:${siteConfig.company.mobile}`}
+                      className="text-[#3b82f6] hover:underline"
+                    >
                       {siteConfig.company.mobile}
                     </a>
                   </p>
                   <p>
-                    <span className="font-semibold">E-Mail:</span>{' '}
-                    <a href={`mailto:${siteConfig.company.email}`} className="text-[#3b82f6] hover:underline">
+                    <span className="font-semibold">E-Mail:</span>{" "}
+                    <a
+                      href={`mailto:${siteConfig.company.email}`}
+                      className="text-[#3b82f6] hover:underline"
+                    >
                       {siteConfig.company.email}
                     </a>
                   </p>
                   <p>
-                    <span className="font-semibold">Homepage:</span>{' '}
-                    <a href={siteConfig.url} className="text-[#3b82f6] hover:underline" target="_blank" rel="noopener noreferrer">
+                    <span className="font-semibold">Homepage:</span>{" "}
+                    <a
+                      href={siteConfig.url}
+                      className="text-[#3b82f6] hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {siteConfig.url}
                     </a>
                   </p>
@@ -79,10 +96,12 @@ export default function ImpressumPage() {
                 </h2>
                 <div className="space-y-2 text-gray-700">
                   <p>
-                    <span className="font-semibold">Steuernummer:</span> 19/612/01272
+                    <span className="font-semibold">Steuernummer:</span>{" "}
+                    19/612/01272
                   </p>
                   <p>
-                    <span className="font-semibold">Umsatzsteuer-ID:</span> DE351058798
+                    <span className="font-semibold">Umsatzsteuer-ID:</span>{" "}
+                    DE351058798
                   </p>
                 </div>
               </div>
@@ -106,7 +125,8 @@ export default function ImpressumPage() {
                 </h2>
                 <div className="space-y-3 text-gray-700">
                   <p>
-                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+                    Die Europäische Kommission stellt eine Plattform zur
+                    Online-Streitbeilegung (OS) bereit:
                   </p>
                   <p>
                     <a
@@ -128,10 +148,12 @@ export default function ImpressumPage() {
                 </h2>
                 <div className="space-y-3 text-gray-700">
                   <p>
-                    Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und grundsätzlich nicht bereit.
+                    Zur Teilnahme an einem Streitbeilegungsverfahren vor einer
+                    Verbraucherschlichtungsstelle sind wir nicht verpflichtet
+                    und grundsätzlich nicht bereit.
                   </p>
                   <p>
-                    Weitere Informationen unter:{' '}
+                    Weitere Informationen unter:{" "}
                     <a
                       href="https://www.abmahnung.de/os-plattform/"
                       target="_blank"
@@ -149,26 +171,46 @@ export default function ImpressumPage() {
                 <h2 className="text-2xl font-bold text-[#1e3a8a] mb-4">
                   Haftungsausschluss
                 </h2>
-                
+
                 <div className="space-y-4 text-gray-700">
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Haftung für Inhalte</h3>
+                    <h3 className="font-semibold text-lg mb-2">
+                      Haftung für Inhalte
+                    </h3>
                     <p className="text-sm">
-                      Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                      Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für
+                      eigene Inhalte auf diesen Seiten nach den allgemeinen
+                      Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+                      Diensteanbieter jedoch nicht verpflichtet, übermittelte
+                      oder gespeicherte fremde Informationen zu überwachen oder
+                      nach Umständen zu forschen, die auf eine rechtswidrige
+                      Tätigkeit hinweisen.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Haftung für Links</h3>
+                    <h3 className="font-semibold text-lg mb-2">
+                      Haftung für Links
+                    </h3>
                     <p className="text-sm">
-                      Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                      Unser Angebot enthält Links zu externen Websites Dritter,
+                      auf deren Inhalte wir keinen Einfluss haben. Deshalb
+                      können wir für diese fremden Inhalte auch keine Gewähr
+                      übernehmen. Für die Inhalte der verlinkten Seiten ist
+                      stets der jeweilige Anbieter oder Betreiber der Seiten
+                      verantwortlich.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Urheberrecht</h3>
                     <p className="text-sm">
-                      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                      Die durch die Seitenbetreiber erstellten Inhalte und Werke
+                      auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+                      Die Vervielfältigung, Bearbeitung, Verbreitung und jede
+                      Art der Verwertung außerhalb der Grenzen des
+                      Urheberrechtes bedürfen der schriftlichen Zustimmung des
+                      jeweiligen Autors bzw. Erstellers.
                     </p>
                   </div>
                 </div>

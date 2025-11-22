@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { useState, useEffect } from "react";
+import { MessageCircle, X } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,15 +18,15 @@ export default function WhatsAppButton() {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-    
+    window.addEventListener("scroll", toggleVisibility);
+
     // Show initially after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 3000);
 
     return () => {
-      window.removeEventListener('scroll', toggleVisibility);
+      window.removeEventListener("scroll", toggleVisibility);
       clearTimeout(timer);
     };
   }, []);
@@ -34,15 +34,15 @@ export default function WhatsAppButton() {
   // Auto-show tooltip for first-time visitors
   useEffect(() => {
     // Check if we're in the browser
-    if (typeof window === 'undefined') return;
-    
-    const hasSeenTooltip = localStorage.getItem('whatsapp-tooltip-seen');
-    
+    if (typeof window === "undefined") return;
+
+    const hasSeenTooltip = localStorage.getItem("whatsapp-tooltip-seen");
+
     if (!hasSeenTooltip && isVisible) {
       const tooltipTimer = setTimeout(() => {
         setShowTooltip(true);
-        localStorage.setItem('whatsapp-tooltip-seen', 'true');
-        
+        localStorage.setItem("whatsapp-tooltip-seen", "true");
+
         // Auto-hide tooltip after 5 seconds
         setTimeout(() => {
           setShowTooltip(false);
@@ -53,9 +53,9 @@ export default function WhatsAppButton() {
     }
   }, [isVisible]);
 
-  const whatsappNumber = siteConfig.company.whatsapp.replace(/\s/g, '');
+  const whatsappNumber = siteConfig.company.whatsapp.replace(/\s/g, "");
   const whatsappMessage = encodeURIComponent(
-    'Hallo PrinceClean, ich möchte gerne einen Termin für eine Teppichreinigung vereinbaren.'
+    "Hallo PrinceClean, ich möchte gerne einen Termin für eine Teppichreinigung vereinbaren."
   );
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -68,8 +68,8 @@ export default function WhatsAppButton() {
         rel="noopener noreferrer"
         className={`fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 group transition-all duration-300 ${
           isVisible
-            ? 'translate-y-0 opacity-100'
-            : 'translate-y-20 opacity-0 pointer-events-none'
+            ? "translate-y-0 opacity-100"
+            : "translate-y-20 opacity-0 pointer-events-none"
         }`}
         aria-label="WhatsApp kontaktieren"
         onMouseEnter={() => setShowTooltip(true)}
@@ -79,11 +79,14 @@ export default function WhatsAppButton() {
         <div className="relative">
           {/* Pulse Animation Ring */}
           <div className="absolute inset-0 bg-[#25d366] rounded-full animate-ping opacity-75"></div>
-          
+
           {/* Button */}
           <div className="relative w-14 h-14 sm:w-16 sm:h-16 bg-[#25d366] rounded-full shadow-lg flex items-center justify-center hover:bg-[#20ba5a] transition-all hover:scale-110 active:scale-95">
-            <MessageCircle className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={2} />
-            
+            <MessageCircle
+              className="w-7 h-7 sm:w-8 sm:h-8 text-white"
+              strokeWidth={2}
+            />
+
             {/* Notification Badge */}
             <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full border-2 border-white flex items-center justify-center">
               <span className="text-white text-xs font-bold">1</span>
@@ -95,8 +98,8 @@ export default function WhatsAppButton() {
         <div
           className={`absolute right-full mr-3 sm:mr-4 top-1/2 -translate-y-1/2 transition-all duration-300 whitespace-nowrap ${
             showTooltip
-              ? 'opacity-100 translate-x-0'
-              : 'opacity-0 translate-x-4 pointer-events-none'
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-4 pointer-events-none"
           }`}
         >
           <div className="bg-gray-900 text-white px-4 py-2 sm:px-5 sm:py-3 rounded-lg shadow-xl relative">
@@ -129,11 +132,11 @@ export default function WhatsAppButton() {
       </a>
 
       {/* Mobile Alternative: Bottom Banner (shows on very small screens) */}
-      <div className={`fixed bottom-0 left-0 right-0 z-40 sm:hidden transition-all duration-300 ${
-        isVisible && !showTooltip
-          ? 'translate-y-0'
-          : 'translate-y-full'
-      }`}>
+      <div
+        className={`fixed bottom-0 left-0 right-0 z-40 sm:hidden transition-all duration-300 ${
+          isVisible && !showTooltip ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
         <a
           href={whatsappUrl}
           target="_blank"

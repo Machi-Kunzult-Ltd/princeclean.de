@@ -1,33 +1,33 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export default function WeiterePage() {
   const services = [
     {
-      icon: '🧼',
-      title: 'Fensterreinigung',
-      price: '4,50€/m²',
-      subtitle: 'inkl. Rahmen',
+      icon: "🧼",
+      title: "Fensterreinigung",
+      price: "4,50€/m²",
+      subtitle: "inkl. Rahmen",
       description:
-        'Genießen Sie kristallklare Ausblicke mit unserem Fensterreinigungsservice in Berlin. Wir reinigen sowohl das Glas als auch die Fensterrahmen – perfekt für Häuser, Büros und Unternehmen, die einen streifenfreien Glanz suchen.',
+        "Genießen Sie kristallklare Ausblicke mit unserem Fensterreinigungsservice in Berlin. Wir reinigen sowohl das Glas als auch die Fensterrahmen – perfekt für Häuser, Büros und Unternehmen, die einen streifenfreien Glanz suchen.",
     },
     {
-      icon: '🏠',
-      title: 'Hausreinigung',
-      price: '32€/Stunde',
-      subtitle: '',
+      icon: "🏠",
+      title: "Hausreinigung",
+      price: "32€/Stunde",
+      subtitle: "",
       description:
-        'Unsere Hausreinigungsdienste in Berlin sind ideal für vielbeschäftigte Haushalte. Buchen Sie flexible Reinigungen auf Stundenbasis von einem vertrauenswürdigen Team. Wir kümmern uns um alles – von der regelmäßigen Haushaltsreinigung bis hin zur Tiefenreinigung und der Reinigung vor dem Umzug.',
+        "Unsere Hausreinigungsdienste in Berlin sind ideal für vielbeschäftigte Haushalte. Buchen Sie flexible Reinigungen auf Stundenbasis von einem vertrauenswürdigen Team. Wir kümmern uns um alles – von der regelmäßigen Haushaltsreinigung bis hin zur Tiefenreinigung und der Reinigung vor dem Umzug.",
     },
     {
-      icon: '🪟',
-      title: 'Vorhangservice',
-      price: '58€ / 29€',
-      subtitle: 'Abnahme & Aufhängen / nur Aufhängen',
+      icon: "🪟",
+      title: "Vorhangservice",
+      price: "58€ / 29€",
+      subtitle: "Abnahme & Aufhängen / nur Aufhängen",
       description:
-        'Nehmen Sie den Stress aus der Vorhangpflege. Unser Vorhangservice in Berlin umfasst die professionelle Abnahme und das Wiederaufhängen Ihrer Vorhänge. Wählen Sie den vollständigen Service oder nur das Wiederaufhängen, je nach Bedarf.',
+        "Nehmen Sie den Stress aus der Vorhangpflege. Unser Vorhangservice in Berlin umfasst die professionelle Abnahme und das Wiederaufhängen Ihrer Vorhänge. Wählen Sie den vollständigen Service oder nur das Wiederaufhängen, je nach Bedarf.",
     },
   ];
 

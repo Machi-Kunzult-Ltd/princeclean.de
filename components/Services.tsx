@@ -1,101 +1,101 @@
 // app/services/page.tsx
 
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function ServicesPage() {
   const services = [
     {
-      id: 'teppichboden',
-      title: '🏠 Teppichbodenreinigung',
+      id: "teppichboden",
+      title: "🏠 Teppichbodenreinigung",
       description:
-        'Geben Sie Ihren Teppichböden neue Frische und verlängern Sie ihre Lebensdauer! Unsere Teppichbodenreinigung entfernt Verschmutzungen tief aus den Fasern und bringt Ihre Böden zum Strahlen.',
+        "Geben Sie Ihren Teppichböden neue Frische und verlängern Sie ihre Lebensdauer! Unsere Teppichbodenreinigung entfernt Verschmutzungen tief aus den Fasern und bringt Ihre Böden zum Strahlen.",
       features: [
-        'Tiefenreinigung aller Teppichbodenarten',
-        'Moderne Reinigungstechnologie',
-        'Kurze Trocknungszeiten',
-        'Umweltfreundliche Reinigungsmittel',
+        "Tiefenreinigung aller Teppichbodenarten",
+        "Moderne Reinigungstechnologie",
+        "Kurze Trocknungszeiten",
+        "Umweltfreundliche Reinigungsmittel",
       ],
-      priceStart: 'ab 4,50€/m²',
-      priceLink: '/pricing/teppichboden',
-      image: '🏠',
+      priceStart: "ab 4,50€/m²",
+      priceLink: "/pricing/teppichboden",
+      image: "🏠",
     },
     {
-      id: 'teppich',
-      title: '🧽 Teppichreinigung',
+      id: "teppich",
+      title: "🧽 Teppichreinigung",
       description:
-        'Geben Sie Ihren Teppichen neue Frische und verlängern Sie ihre Lebensdauer! Unsere Teppichreinigung entfernt Verschmutzungen tief aus den Fasern und bringt Ihre Teppiche zum Strahlen.',
+        "Geben Sie Ihren Teppichen neue Frische und verlängern Sie ihre Lebensdauer! Unsere Teppichreinigung entfernt Verschmutzungen tief aus den Fasern und bringt Ihre Teppiche zum Strahlen.",
       features: [
-        'Alle Teppicharten (Perserteppiche, Berberteppiche, etc.)',
-        'Professionelle Fleckenentfernung',
-        'Schonende Reinigungsverfahren',
-        'Abholung und Lieferung möglich',
+        "Alle Teppicharten (Perserteppiche, Berberteppiche, etc.)",
+        "Professionelle Fleckenentfernung",
+        "Schonende Reinigungsverfahren",
+        "Abholung und Lieferung möglich",
       ],
-      priceStart: 'ab 7,00€/m²',
-      priceLink: '/pricing/teppich',
-      image: '🧽',
+      priceStart: "ab 7,00€/m²",
+      priceLink: "/pricing/teppich",
+      image: "🧽",
     },
     {
-      id: 'polster',
-      title: '🛋️ Polsterreinigung',
+      id: "polster",
+      title: "🛋️ Polsterreinigung",
       description:
-        'Unsere Polsterreinigung erfolgt bei Ihnen vor Ort oder in unserem Geschäft. Wir reinigen Ihre Sofas, Sessel und Stühle professionell und schonend.',
+        "Unsere Polsterreinigung erfolgt bei Ihnen vor Ort oder in unserem Geschäft. Wir reinigen Ihre Sofas, Sessel und Stühle professionell und schonend.",
       features: [
-        'Vor-Ort-Service oder Abholung',
-        'Alle Polsterarten',
-        'Geruchsneutralisierung',
-        'Imprägnierung auf Wunsch',
+        "Vor-Ort-Service oder Abholung",
+        "Alle Polsterarten",
+        "Geruchsneutralisierung",
+        "Imprägnierung auf Wunsch",
       ],
-      priceStart: 'ab 29,00€',
-      priceLink: '/pricing/polster',
-      image: '🛋️',
+      priceStart: "ab 29,00€",
+      priceLink: "/pricing/polster",
+      image: "🛋️",
     },
     {
-      id: 'textil',
-      title: '👔 Textilreinigung',
+      id: "textil",
+      title: "👔 Textilreinigung",
       description:
-        'Wir kümmern uns um die Wäscherei Ihrer Kleidung und Wohntextilien, von Anzügen bis hin zu großen Textilien wie Zelten. Bei uns ist von A bis Z alles möglich!',
+        "Wir kümmern uns um die Wäscherei Ihrer Kleidung und Wohntextilien, von Anzügen bis hin zu großen Textilien wie Zelten. Bei uns ist von A bis Z alles möglich!",
       features: [
-        'Kleidung und Anzüge',
-        'Gardinen und Vorhänge',
-        'Bettwäsche und Decken',
-        'Express-Service verfügbar',
+        "Kleidung und Anzüge",
+        "Gardinen und Vorhänge",
+        "Bettwäsche und Decken",
+        "Express-Service verfügbar",
       ],
-      priceStart: 'ab 3,00€',
-      priceLink: '/pricing/textil',
-      image: '👔',
+      priceStart: "ab 3,00€",
+      priceLink: "/pricing/textil",
+      image: "👔",
     },
     {
-      id: 'fenster',
-      title: '🪟 Fensterreinigung',
+      id: "fenster",
+      title: "🪟 Fensterreinigung",
       description:
-        'Mit unserem Fensterreinigungsservice behalten Sie den perfekten Durchblick! Unsere erfahrenen Reinigungskräfte sorgen für streifenfreie Fenster in Ihrem Zuhause oder Büro.',
+        "Mit unserem Fensterreinigungsservice behalten Sie den perfekten Durchblick! Unsere erfahrenen Reinigungskräfte sorgen für streifenfreie Fenster in Ihrem Zuhause oder Büro.",
       features: [
-        'Streifenfreie Reinigung',
-        'Rahmen inklusive',
-        'Innen und außen',
-        'Auch für Bürogebäude',
+        "Streifenfreie Reinigung",
+        "Rahmen inklusive",
+        "Innen und außen",
+        "Auch für Bürogebäude",
       ],
-      priceStart: 'ab 4,50€/m²',
-      priceLink: '/pricing/weitere',
-      image: '🪟',
+      priceStart: "ab 4,50€/m²",
+      priceLink: "/pricing/weitere",
+      image: "🪟",
     },
     {
-      id: 'reinigung',
-      title: '🧹 Reinigungsservice',
+      id: "reinigung",
+      title: "🧹 Reinigungsservice",
       description:
-        'Ob regelmäßige Unterhaltsreinigung für Ihre Immobilie oder eine gründliche Grundreinigung – als erfahrene Reinigungsfirma sind wir stets für Sie da.',
+        "Ob regelmäßige Unterhaltsreinigung für Ihre Immobilie oder eine gründliche Grundreinigung – als erfahrene Reinigungsfirma sind wir stets für Sie da.",
       features: [
-        'Unterhaltsreinigung',
-        'Grundreinigung',
-        'Büroreinigung',
-        'Umzugsreinigung',
+        "Unterhaltsreinigung",
+        "Grundreinigung",
+        "Büroreinigung",
+        "Umzugsreinigung",
       ],
-      priceStart: 'ab 32,00€/Std',
-      priceLink: '/pricing/weitere',
-      image: '🧹',
+      priceStart: "ab 32,00€/Std",
+      priceLink: "/pricing/weitere",
+      image: "🧹",
     },
   ];
 
@@ -127,10 +127,10 @@ export default function ServicesPage() {
                 <div
                   className={`h-48 flex items-center justify-center text-7xl ${
                     index % 3 === 0
-                      ? 'bg-gradient-to-br from-blue-100 to-blue-50'
+                      ? "bg-gradient-to-br from-blue-100 to-blue-50"
                       : index % 3 === 1
-                      ? 'bg-gradient-to-br from-green-100 to-green-50'
-                      : 'bg-gradient-to-br from-red-100 to-red-50'
+                      ? "bg-gradient-to-br from-green-100 to-green-50"
+                      : "bg-gradient-to-br from-red-100 to-red-50"
                   }`}
                 >
                   {service.image}
@@ -158,9 +158,7 @@ export default function ServicesPage() {
                   {/* Price & CTA */}
                   <div className="flex items-center justify-between pt-6 border-t border-gray-200">
                     <div>
-                      <div className="text-sm text-gray-500 mb-1">
-                        Preis ab
-                      </div>
+                      <div className="text-sm text-gray-500 mb-1">Preis ab</div>
                       <div className="text-2xl font-bold text-[#3b82f6]">
                         {service.priceStart}
                       </div>
@@ -190,34 +188,34 @@ export default function ServicesPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {[
                 {
-                  icon: '🎯',
-                  title: 'Erfolg ist unser Ziel',
-                  desc: 'Höchste Qualitätsstandards',
+                  icon: "🎯",
+                  title: "Erfolg ist unser Ziel",
+                  desc: "Höchste Qualitätsstandards",
                 },
                 {
-                  icon: '✅',
-                  title: 'Ehrlichkeit & Zuverlässigkeit',
-                  desc: 'Transparente Preise',
+                  icon: "✅",
+                  title: "Ehrlichkeit & Zuverlässigkeit",
+                  desc: "Transparente Preise",
                 },
                 {
-                  icon: '🔧',
-                  title: 'Individuelle Lösungen',
-                  desc: 'Auf Sie zugeschnitten',
+                  icon: "🔧",
+                  title: "Individuelle Lösungen",
+                  desc: "Auf Sie zugeschnitten",
                 },
                 {
-                  icon: '🌱',
-                  title: 'Nachhaltigkeit',
-                  desc: 'Umweltfreundliche Mittel',
+                  icon: "🌱",
+                  title: "Nachhaltigkeit",
+                  desc: "Umweltfreundliche Mittel",
                 },
                 {
-                  icon: '❤️',
-                  title: 'Mit Herz bei der Sache',
-                  desc: 'Leidenschaft für Sauberkeit',
+                  icon: "❤️",
+                  title: "Mit Herz bei der Sache",
+                  desc: "Leidenschaft für Sauberkeit",
                 },
                 {
-                  icon: '😊',
-                  title: 'Ihre Zufriedenheit',
-                  desc: '100% Garantie',
+                  icon: "😊",
+                  title: "Ihre Zufriedenheit",
+                  desc: "100% Garantie",
                 },
               ].map((item, i) => (
                 <div

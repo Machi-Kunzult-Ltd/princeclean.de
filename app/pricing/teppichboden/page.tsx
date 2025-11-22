@@ -1,25 +1,25 @@
 // app/pricing/teppichboden/page.tsx
 
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export default function TeppichbodenPage() {
   const mainPricing = [
-    { area: 'bis zu 100m²', price: '12,00€/m²' },
-    { area: 'bis zu 200m²', price: '10,00€/m²' },
-    { area: 'bis zu 300m²', price: '8,00€/m²' },
-    { area: 'bis zu 500m²', price: '6,00€/m²' },
-    { area: 'über 500m²', price: '4,50€/m²' },
+    { area: "bis zu 100m²", price: "12,00€/m²" },
+    { area: "bis zu 200m²", price: "10,00€/m²" },
+    { area: "bis zu 300m²", price: "8,00€/m²" },
+    { area: "bis zu 500m²", price: "6,00€/m²" },
+    { area: "über 500m²", price: "4,50€/m²" },
   ];
 
   const impraegnierungPricing = [
-    { area: 'bis zu 100m²', price: '6,00€/m²' },
-    { area: 'bis zu 200m²', price: '5,00€/m²' },
-    { area: 'bis zu 300m²', price: '4,00€/m²' },
-    { area: 'bis zu 500m²', price: '3,00€/m²' },
-    { area: 'über 500m²', price: '2,25€/m²' },
+    { area: "bis zu 100m²", price: "6,00€/m²" },
+    { area: "bis zu 200m²", price: "5,00€/m²" },
+    { area: "bis zu 300m²", price: "4,00€/m²" },
+    { area: "bis zu 500m²", price: "3,00€/m²" },
+    { area: "über 500m²", price: "2,25€/m²" },
   ];
 
   return (
@@ -31,7 +31,9 @@ export default function TeppichbodenPage() {
           className="inline-flex items-center gap-2 text-[#1e3a8a] hover:underline mb-6 sm:mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm sm:text-base">Zurück zur Preisübersicht</span>
+          <span className="text-sm sm:text-base">
+            Zurück zur Preisübersicht
+          </span>
         </Link>
 
         {/* Header */}
@@ -51,7 +53,9 @@ export default function TeppichbodenPage() {
         <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
           <div className="w-full h-48 sm:h-64 md:h-80 lg:h-96 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center">
             <div className="text-center p-4">
-              <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-3 sm:mb-4">🏠</div>
+              <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-3 sm:mb-4">
+                🏠
+              </div>
               <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700">
                 Teppichbodenreinigung
               </div>
@@ -98,7 +102,8 @@ export default function TeppichbodenPage() {
 
             <div className="p-4 sm:p-6 bg-gray-50 border-t">
               <p className="text-xs sm:text-sm text-gray-600">
-                Preise gelten für die Standardreinigung und beinhalten die Kosten für die Reinigungsmittel.
+                Preise gelten für die Standardreinigung und beinhalten die
+                Kosten für die Reinigungsmittel.
               </p>
             </div>
           </div>
@@ -122,7 +127,8 @@ export default function TeppichbodenPage() {
                   10,00€/m²
                 </div>
                 <p className="text-xs sm:text-sm text-gray-600">
-                  Die Fleckenarten werden vorab bestimmt und können dann mit unterschiedlichen Mitteln vorbehandelt werden.
+                  Die Fleckenarten werden vorab bestimmt und können dann mit
+                  unterschiedlichen Mitteln vorbehandelt werden.
                 </p>
               </div>
 
@@ -138,7 +144,11 @@ export default function TeppichbodenPage() {
                   2,50€/m²
                 </div>
                 <p className="text-xs sm:text-sm text-gray-600">
-                  Je nachdem wie hoch der Verschmutzungsgrad Ihres Teppichbodens ist, intensivieren wir die Reinigung, um ein wirklich gutes Ergebnis für Sie zu erzielen. Hierbei verwenden wir mehr Material und mehr Arbeitszeit, was insgesamt einen höheren Arbeitsaufwand darstellt.
+                  Je nachdem wie hoch der Verschmutzungsgrad Ihres Teppichbodens
+                  ist, intensivieren wir die Reinigung, um ein wirklich gutes
+                  Ergebnis für Sie zu erzielen. Hierbei verwenden wir mehr
+                  Material und mehr Arbeitszeit, was insgesamt einen höheren
+                  Arbeitsaufwand darstellt.
                 </p>
               </div>
             </div>
@@ -147,7 +157,9 @@ export default function TeppichbodenPage() {
           {/* Imprägnierung Section */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden mb-8 sm:mb-12">
             <div className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white px-4 sm:px-6 py-3 sm:py-4">
-              <h2 className="text-xl sm:text-2xl font-bold underline">Imprägnierung</h2>
+              <h2 className="text-xl sm:text-2xl font-bold underline">
+                Imprägnierung
+              </h2>
             </div>
             <div className="p-4 sm:p-6">
               <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
@@ -195,7 +207,10 @@ export default function TeppichbodenPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <Link href="/contact" className="btn btn-primary text-sm sm:text-base">
+            <Link
+              href="/contact"
+              className="btn btn-primary text-sm sm:text-base"
+            >
               Kontakt
             </Link>
           </div>

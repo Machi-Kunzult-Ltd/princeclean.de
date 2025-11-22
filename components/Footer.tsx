@@ -1,8 +1,8 @@
 // app/(main)/_components/footer.tsx
 
-import Link from 'next/link';
-import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import Link from "next/link";
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export default function Footer() {
   return (
@@ -21,7 +21,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm opacity-90 leading-relaxed">
-              Professionelle Teppich-, Polster- und Textilreinigung in Berlin seit über 10 Jahren.
+              Professionelle Teppich-, Polster- und Textilreinigung in Berlin
+              seit über 10 Jahren.
             </p>
           </div>
 
@@ -48,7 +49,7 @@ export default function Footer() {
                 <div>
                   <div>{siteConfig.company.address.street}</div>
                   <div>
-                    {siteConfig.company.address.zip}{' '}
+                    {siteConfig.company.address.zip}{" "}
                     {siteConfig.company.address.city}
                   </div>
                 </div>

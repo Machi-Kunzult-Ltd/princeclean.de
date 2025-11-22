@@ -1,49 +1,49 @@
 // app/pricing/polster/page.tsx
 
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export default function PolsterPage() {
   const furniture = [
     {
-      name: 'Sessel',
-      prices: { S: '29,00€', M: '39,00€', L: '49,00€', XL: '59,00€' },
+      name: "Sessel",
+      prices: { S: "29,00€", M: "39,00€", L: "49,00€", XL: "59,00€" },
     },
     {
-      name: 'Hocker',
-      prices: { S: '19,00€', M: '29,00€', L: '39,00€', XL: '49,00€' },
+      name: "Hocker",
+      prices: { S: "19,00€", M: "29,00€", L: "39,00€", XL: "49,00€" },
     },
     {
-      name: '2-Sitzer',
-      prices: { S: '59,00€', M: '79,00€', L: '99,00€', XL: '119,00€' },
+      name: "2-Sitzer",
+      prices: { S: "59,00€", M: "79,00€", L: "99,00€", XL: "119,00€" },
     },
     {
-      name: '3-Sitzer',
-      prices: { S: '79,00€', M: '99,00€', L: '119,00€', XL: '149,00€' },
+      name: "3-Sitzer",
+      prices: { S: "79,00€", M: "99,00€", L: "119,00€", XL: "149,00€" },
     },
     {
-      name: 'Ecksofa',
-      prices: { S: '199,00€', M: '219,00€', L: '259,00€', XL: '289,00€' },
+      name: "Ecksofa",
+      prices: { S: "199,00€", M: "219,00€", L: "259,00€", XL: "289,00€" },
     },
   ];
 
   const additionalServices = [
     {
-      name: 'Geruchsneutralisierung',
-      price: '5,00€/Sitz',
-      description: 'zur Neutralisierung von Gerüchen von z.B. Haustieren',
+      name: "Geruchsneutralisierung",
+      price: "5,00€/Sitz",
+      description: "zur Neutralisierung von Gerüchen von z.B. Haustieren",
     },
     {
-      name: 'Imprägnierung',
-      price: '5,00€/Sitz',
-      description: 'für einen langanhaltenden Schutz vor neuen Verschmutzungen',
+      name: "Imprägnierung",
+      price: "5,00€/Sitz",
+      description: "für einen langanhaltenden Schutz vor neuen Verschmutzungen",
     },
     {
-      name: 'Fleckenvorbehandlung',
-      price: '10,00€/Sitz',
-      description: 'intensive Vorbehandlung von Flecken',
+      name: "Fleckenvorbehandlung",
+      price: "10,00€/Sitz",
+      description: "intensive Vorbehandlung von Flecken",
     },
   ];
 
@@ -56,7 +56,9 @@ export default function PolsterPage() {
           className="inline-flex items-center gap-2 text-[#1e3a8a] hover:underline mb-6 sm:mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="text-sm sm:text-base">Zurück zur Preisübersicht</span>
+          <span className="text-sm sm:text-base">
+            Zurück zur Preisübersicht
+          </span>
         </Link>
 
         {/* Header */}
@@ -68,7 +70,9 @@ export default function PolsterPage() {
             Wir reinigen Ihre Polstermöbel professionell & günstig. Sprechen Sie
             uns einfach an! Wir sind für Sie da!
           </p>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2">*keine Ledergarnituren*</p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-2">
+            *keine Ledergarnituren*
+          </p>
         </div>
 
         {/* Image Placeholder */}
@@ -115,11 +119,10 @@ export default function PolsterPage() {
                 </thead>
                 <tbody>
                   {furniture.map((item, index) => (
-                    <tr
-                      key={index}
-                      className="border-b hover:bg-gray-50"
-                    >
-                      <td className="px-3 sm:px-6 py-3 sm:py-4 font-medium text-sm sm:text-base">{item.name}</td>
+                    <tr key={index} className="border-b hover:bg-gray-50">
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 font-medium text-sm sm:text-base">
+                        {item.name}
+                      </td>
                       <td className="px-2 sm:px-6 py-3 sm:py-4 text-center text-[#3b82f6] font-bold text-sm sm:text-base whitespace-nowrap">
                         {item.prices.S}
                       </td>
@@ -146,7 +149,10 @@ export default function PolsterPage() {
             </h3>
             <div className="space-y-3 sm:space-y-4">
               {additionalServices.map((service, index) => (
-                <div key={index} className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
+                <div
+                  key={index}
+                  className="bg-white p-4 sm:p-6 rounded-lg shadow-sm"
+                >
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
                     <h4 className="font-bold text-base sm:text-lg text-[#1e3a8a]">
                       {service.name}
@@ -155,7 +161,9 @@ export default function PolsterPage() {
                       {service.price}
                     </span>
                   </div>
-                  <p className="text-gray-600 text-xs sm:text-sm">{service.description}</p>
+                  <p className="text-gray-600 text-xs sm:text-sm">
+                    {service.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -171,7 +179,10 @@ export default function PolsterPage() {
 
           {/* CTA */}
           <div className="text-center">
-            <Link href="/contact" className="btn btn-primary text-sm sm:text-base">
+            <Link
+              href="/contact"
+              className="btn btn-primary text-sm sm:text-base"
+            >
               Jetzt Angebot anfragen
             </Link>
           </div>

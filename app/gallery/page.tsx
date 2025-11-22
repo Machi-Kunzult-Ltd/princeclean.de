@@ -1,60 +1,60 @@
 // app/gallery/page.tsx
 
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { X } from 'lucide-react';
+import { useState } from "react";
+import Link from "next/link";
+import { X } from "lucide-react";
 
 // Placeholder gallery images - replace with your actual images
 const galleryImages = [
   {
     id: 1,
-    src: '/images/gallery/carpet-before.jpg',
-    alt: 'Weißer Teppich vorher',
-    category: 'before-after'
+    src: "/images/gallery/carpet-before.jpg",
+    alt: "Weißer Teppich vorher",
+    category: "before-after",
   },
   {
     id: 2,
-    src: '/images/gallery/carpet-after.jpg',
-    alt: 'Weißer Teppich nachher',
-    category: 'before-after'
+    src: "/images/gallery/carpet-after.jpg",
+    alt: "Weißer Teppich nachher",
+    category: "before-after",
   },
   {
     id: 3,
-    src: '/images/gallery/carpet-comparison.jpg',
-    alt: 'Weißer Teppich vorher nachher',
-    category: 'before-after'
+    src: "/images/gallery/carpet-comparison.jpg",
+    alt: "Weißer Teppich vorher nachher",
+    category: "before-after",
   },
   {
     id: 4,
-    src: '/images/gallery/green-carpet-before.jpg',
-    alt: 'Teppich grün vorher',
-    category: 'before-after'
+    src: "/images/gallery/green-carpet-before.jpg",
+    alt: "Teppich grün vorher",
+    category: "before-after",
   },
   {
     id: 5,
-    src: '/images/gallery/green-carpet-after.jpg',
-    alt: 'Teppich grün nachher',
-    category: 'before-after'
+    src: "/images/gallery/green-carpet-after.jpg",
+    alt: "Teppich grün nachher",
+    category: "before-after",
   },
   {
     id: 6,
-    src: '/images/gallery/cleaning-process.jpg',
-    alt: 'Teppichreinigung in Aktion',
-    category: 'process'
+    src: "/images/gallery/cleaning-process.jpg",
+    alt: "Teppichreinigung in Aktion",
+    category: "process",
   },
   {
     id: 7,
-    src: '/images/gallery/drying.jpg',
-    alt: 'Trocknung',
-    category: 'process'
+    src: "/images/gallery/drying.jpg",
+    alt: "Trocknung",
+    category: "process",
   },
   {
     id: 8,
-    src: '/images/gallery/finished.jpg',
-    alt: 'Fertig zur Auslieferung',
-    category: 'finished'
+    src: "/images/gallery/finished.jpg",
+    alt: "Fertig zur Auslieferung",
+    category: "finished",
   },
 ];
 
@@ -69,7 +69,9 @@ export default function GalleryPage() {
     setSelectedImage(null);
   };
 
-  const selectedImageData = galleryImages.find(img => img.id === selectedImage);
+  const selectedImageData = galleryImages.find(
+    (img) => img.id === selectedImage
+  );
 
   return (
     <>
@@ -81,7 +83,8 @@ export default function GalleryPage() {
               Galerie
             </h1>
             <p className="text-lg sm:text-xl text-white/90">
-              Überzeugen Sie sich von unserer Arbeit - Der Vorher-Nachher-Vergleich
+              Überzeugen Sie sich von unserer Arbeit - Der
+              Vorher-Nachher-Vergleich
             </p>
           </div>
         </div>
@@ -102,7 +105,10 @@ export default function GalleryPage() {
                   className="w-full h-full"
                   poster="/images/video-thumbnail.jpg"
                 >
-                  <source src="/videos/princeclean-video.mp4" type="video/mp4" />
+                  <source
+                    src="/videos/princeclean-video.mp4"
+                    type="video/mp4"
+                  />
                   Ihr Browser unterstützt das Video-Tag nicht.
                 </video>
               </div>
@@ -131,7 +137,9 @@ export default function GalleryPage() {
                 <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
                   <div className="text-center p-6">
                     <div className="text-6xl mb-4">🧽</div>
-                    <p className="text-gray-600">Professionelle Teppichwäsche</p>
+                    <p className="text-gray-600">
+                      Professionelle Teppichwäsche
+                    </p>
                   </div>
                 </div>
               </div>
@@ -190,7 +198,7 @@ export default function GalleryPage() {
                     <p className="text-sm text-gray-600">{image.alt}</p>
                   </div>
                 </div>
-                
+
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
                   <span className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -226,14 +234,19 @@ export default function GalleryPage() {
           >
             <X className="w-8 h-8" />
           </button>
-          
-          <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
+
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="bg-white rounded-xl overflow-hidden">
               {/* Placeholder image in lightbox */}
               <div className="w-full aspect-video bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="text-8xl mb-4">🖼️</div>
-                  <p className="text-xl text-gray-600">{selectedImageData.alt}</p>
+                  <p className="text-xl text-gray-600">
+                    {selectedImageData.alt}
+                  </p>
                 </div>
               </div>
             </div>

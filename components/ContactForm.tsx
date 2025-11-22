@@ -1,43 +1,47 @@
 // app/contact/page.tsx
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Send } from 'lucide-react';
+import { useState } from "react";
+import Link from "next/link";
+import { Send } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
   });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('loading');
-    setErrorMessage('');
+    setStatus("loading");
+    setErrorMessage("");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', phone: '', email: '', message: '' });
+        setStatus("success");
+        setFormData({ name: "", phone: "", email: "", message: "" });
       } else {
-        throw new Error('Failed to send message');
+        throw new Error("Failed to send message");
       }
     } catch (error) {
-      setStatus('error');
-      setErrorMessage('Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.');
+      setStatus("error");
+      setErrorMessage(
+        "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+      );
     }
   };
 
@@ -94,17 +98,19 @@ export default function ContactForm() {
           required
           className="form-textarea"
           value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, message: e.target.value })
+          }
         />
       </div>
 
-      {status === 'success' && (
+      {status === "success" && (
         <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-xl">
           ✅ Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.
         </div>
       )}
 
-      {status === 'error' && (
+      {status === "error" && (
         <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-xl">
           ❌ {errorMessage}
         </div>
@@ -112,10 +118,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        disabled={status === 'loading'}
+        disabled={status === "loading"}
         className="btn btn-primary w-full"
       >
-        {status === 'loading' ? (
+        {status === "loading" ? (
           <span>Wird gesendet...</span>
         ) : (
           <>
@@ -126,10 +132,10 @@ export default function ContactForm() {
       </button>
 
       <p className="text-xs text-gray-600 text-center">
-        Mit dem Absenden stimmen Sie unseren{' '}
+        Mit dem Absenden stimmen Sie unseren{" "}
         <Link href="/datenschutz" className="text-[#3b82f6] hover:underline">
           Datenschutzbestimmungen
-        </Link>{' '}
+        </Link>{" "}
         zu.
       </p>
     </form>

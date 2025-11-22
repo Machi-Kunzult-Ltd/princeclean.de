@@ -1,6 +1,6 @@
 // app/datenschutz/page.tsx
 
-import { siteConfig } from '@/config/site';
+import { siteConfig } from "@/config/site";
 
 export default function DatenschutzPage() {
   return (
@@ -27,13 +27,19 @@ export default function DatenschutzPage() {
               {/* Company Information */}
               <div className="pb-6 border-b border-gray-200">
                 <p className="text-sm">
-                  <strong>PrinceClean Teppichreinigung</strong><br />
-                  Inhaber: Abel Modibo<br />
-                  {siteConfig.company.address.street}, {siteConfig.company.address.zip} {siteConfig.company.address.city}
+                  <strong>PrinceClean Teppichreinigung</strong>
+                  <br />
+                  Inhaber: Abel Modibo
+                  <br />
+                  {siteConfig.company.address.street},{" "}
+                  {siteConfig.company.address.zip}{" "}
+                  {siteConfig.company.address.city}
                 </p>
                 <p className="text-sm mt-3">
-                  Telefon: {siteConfig.company.mobile}<br />
-                  E-Mail: {siteConfig.company.email}<br />
+                  Telefon: {siteConfig.company.mobile}
+                  <br />
+                  E-Mail: {siteConfig.company.email}
+                  <br />
                   Homepage: {siteConfig.url}
                 </p>
               </div>
@@ -51,7 +57,9 @@ export default function DatenschutzPage() {
                   Allgemeine Datenverwendung
                 </h3>
                 <p className="leading-relaxed">
-                  Die anfallenden Daten werden lediglich für statistische Zwecke verwendet. Eine Weitergabe an Dritte oder eine Verknüpfung mit persönlichen Daten findet nicht statt.
+                  Die anfallenden Daten werden lediglich für statistische Zwecke
+                  verwendet. Eine Weitergabe an Dritte oder eine Verknüpfung mit
+                  persönlichen Daten findet nicht statt.
                 </p>
               </div>
 
@@ -61,10 +69,19 @@ export default function DatenschutzPage() {
                   Kontaktaufnahme über die Homepage
                 </h3>
                 <p className="leading-relaxed mb-4">
-                  Es besteht die Möglichkeit über die Homepage Kontakt zu uns aufzunehmen. Bei einer Anfrage über das Kontaktformular werden die darin gemachten Angaben lediglich zur Kontaktaufnahme zu Ihnen verwendet. Eine Speicherung der Angaben im Kontaktformular auf eigenen oder externen Servern erfolgt nicht. Nach Bearbeitung der Anfrage werden die erhobenen Daten unverzüglich gelöscht, soweit keine gesetzlichen Aufbewahrungsfristen bestehen oder eine Einwilligung Ihrerseits besteht. Eine Weitergabe an Dritte erfolgt nicht.
+                  Es besteht die Möglichkeit über die Homepage Kontakt zu uns
+                  aufzunehmen. Bei einer Anfrage über das Kontaktformular werden
+                  die darin gemachten Angaben lediglich zur Kontaktaufnahme zu
+                  Ihnen verwendet. Eine Speicherung der Angaben im
+                  Kontaktformular auf eigenen oder externen Servern erfolgt
+                  nicht. Nach Bearbeitung der Anfrage werden die erhobenen Daten
+                  unverzüglich gelöscht, soweit keine gesetzlichen
+                  Aufbewahrungsfristen bestehen oder eine Einwilligung
+                  Ihrerseits besteht. Eine Weitergabe an Dritte erfolgt nicht.
                 </p>
                 <p className="leading-relaxed mb-3">
-                  Zur Kontaktaufnahme werden folgende Daten von Ihnen erhoben und gespeichert:
+                  Zur Kontaktaufnahme werden folgende Daten von Ihnen erhoben
+                  und gespeichert:
                 </p>
               </div>
 
@@ -88,7 +105,9 @@ export default function DatenschutzPage() {
                   Widerrufsrecht
                 </h3>
                 <p className="leading-relaxed">
-                  Bei Verträgen, die beim Kunden und nicht in den Geschäftsräumen der PrinceClean Teppichreinigung abgeschlossen werden, gilt das 14-tägige Widerrufsrecht.
+                  Bei Verträgen, die beim Kunden und nicht in den
+                  Geschäftsräumen der PrinceClean Teppichreinigung abgeschlossen
+                  werden, gilt das 14-tägige Widerrufsrecht.
                 </p>
               </div>
 
@@ -97,13 +116,18 @@ export default function DatenschutzPage() {
                 <h3 className="text-xl font-semibold text-[#1e3a8a] mb-3">
                   Ihre Rechte
                 </h3>
-                <p className="leading-relaxed mb-3">
-                  Sie haben das Recht:
-                </p>
+                <p className="leading-relaxed mb-3">Sie haben das Recht:</p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>Auskunft über Ihre bei uns gespeicherten Daten zu erhalten</li>
-                  <li>Die Berichtigung unrichtiger personenbezogener Daten zu verlangen</li>
-                  <li>Die Löschung Ihrer bei uns gespeicherten Daten zu verlangen</li>
+                  <li>
+                    Auskunft über Ihre bei uns gespeicherten Daten zu erhalten
+                  </li>
+                  <li>
+                    Die Berichtigung unrichtiger personenbezogener Daten zu
+                    verlangen
+                  </li>
+                  <li>
+                    Die Löschung Ihrer bei uns gespeicherten Daten zu verlangen
+                  </li>
                   <li>Die Einschränkung der Datenverarbeitung zu verlangen</li>
                   <li>Der Datenverarbeitung zu widersprechen</li>
                   <li>Auf Datenübertragbarkeit</li>
@@ -116,7 +140,13 @@ export default function DatenschutzPage() {
                   Datensicherheit
                 </h3>
                 <p className="leading-relaxed">
-                  Wir verwenden innerhalb des Website-Besuchs das verbreitete SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils höchsten Verschlüsselungsstufe, die von Ihrem Browser unterstützt wird. Ob eine einzelne Seite unseres Internetauftrittes verschlüsselt übertragen wird, erkennen Sie an der geschlossenen Darstellung des Schüssel- beziehungsweise Schloss-Symbols in der unteren Statusleiste Ihres Browsers.
+                  Wir verwenden innerhalb des Website-Besuchs das verbreitete
+                  SSL-Verfahren (Secure Socket Layer) in Verbindung mit der
+                  jeweils höchsten Verschlüsselungsstufe, die von Ihrem Browser
+                  unterstützt wird. Ob eine einzelne Seite unseres
+                  Internetauftrittes verschlüsselt übertragen wird, erkennen Sie
+                  an der geschlossenen Darstellung des Schüssel- beziehungsweise
+                  Schloss-Symbols in der unteren Statusleiste Ihres Browsers.
                 </p>
               </div>
 
@@ -126,7 +156,14 @@ export default function DatenschutzPage() {
                   Cookies
                 </h3>
                 <p className="leading-relaxed">
-                  Unsere Website verwendet Cookies. Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert. Cookies helfen uns dabei, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und einzeln über deren Annahme entscheiden oder die Annahme von Cookies für bestimmte Fälle oder generell ausschließen.
+                  Unsere Website verwendet Cookies. Das sind kleine Textdateien,
+                  die Ihr Webbrowser auf Ihrem Endgerät speichert. Cookies
+                  helfen uns dabei, unser Angebot nutzerfreundlicher, effektiver
+                  und sicherer zu machen. Sie können Ihren Browser so
+                  einstellen, dass Sie über das Setzen von Cookies informiert
+                  werden und einzeln über deren Annahme entscheiden oder die
+                  Annahme von Cookies für bestimmte Fälle oder generell
+                  ausschließen.
                 </p>
               </div>
 
@@ -136,10 +173,15 @@ export default function DatenschutzPage() {
                   Fragen zum Datenschutz?
                 </h3>
                 <p className="leading-relaxed">
-                  Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von Daten wenden Sie sich bitte an:
+                  Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer
+                  personenbezogenen Daten, bei Auskünften, Berichtigung,
+                  Sperrung oder Löschung von Daten wenden Sie sich bitte an:
                 </p>
                 <p className="mt-3 font-semibold">
-                  <a href={`mailto:${siteConfig.company.email}`} className="text-[#3b82f6] hover:underline">
+                  <a
+                    href={`mailto:${siteConfig.company.email}`}
+                    className="text-[#3b82f6] hover:underline"
+                  >
                     {siteConfig.company.email}
                   </a>
                 </p>
