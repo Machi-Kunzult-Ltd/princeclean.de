@@ -128,21 +128,11 @@ export default function TeppichPage() {
         </div>
 
         {/* Images */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8 sm:mb-12">
-          <div className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg">
+        <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
+          <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
             <Image
               src="/images/services/carpet_cleaning.png"
               alt="PrinceClean Teppichreinigung in Action"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-              unoptimized
-            />
-          </div>
-          <div className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/images/services/carpet_cleaning.png"
-              alt="Vorher/Nachher Teppichreinigung"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"

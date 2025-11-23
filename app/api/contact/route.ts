@@ -1,7 +1,9 @@
+// app/api/contact/route.ts
+
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Only initialize Resend if API key is available
+// Initialize Resend with API key
 const resend = process.env.RESEND_API_KEY 
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
@@ -32,16 +34,17 @@ export async function POST(request: Request) {
     const data = await resend.emails.send({
       from: 'PrinceClean Website <noreply@princeclean.de>',
       to: process.env.CONTACT_EMAIL || 'kontakt@princeclean.de',
+      reply_to: email,
       subject: `Neue Kontaktanfrage von ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1e3a8a;">Neue Kontaktanfrage</h2>
           <div style="background: #f3f4f6; padding: 20px; border-radius: 10px; margin: 20px 0;">
             <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Telefon:</strong> ${phone}</p>
-            <p><strong>E-Mail:</strong> ${email}</p>
+            <p><strong>Telefon:</strong> <a href="tel:${phone}">${phone}</a></p>
+            <p><strong>E-Mail:</strong> <a href="mailto:${email}">${email}</a></p>
             <p><strong>Nachricht:</strong></p>
-            <p style="white-space: pre-wrap;">${message}</p>
+            <p style="white-space: pre-wrap; background: white; padding: 15px; border-radius: 5px;">${message}</p>
           </div>
           <p style="color: #6b7280; font-size: 12px;">
             Diese E-Mail wurde über das Kontaktformular auf princeclean.de gesendet.

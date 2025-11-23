@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 import { siteConfig } from "@/config/site";
 
 export default function Footer() {
@@ -108,6 +109,15 @@ export default function Footer() {
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@princecleanteppiche"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label="TikTok"
+                >
+                  <FaTiktok className="w-5 h-5" />
                 </a>
               </div>
             </div>
