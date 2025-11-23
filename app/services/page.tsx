@@ -26,7 +26,7 @@ const servicesDetail = [
   {
     id: 'teppich',
     title: 'Teppichreinigung',
-    image: '/images/services/carpet_cleaning.png',
+    image: '/images/services/floor_cleaning.png',
     description:
       'Geben Sie Ihren Teppichen neue Frische und verlängern Sie ihre Lebensdauer! Unsere Teppichreinigung entfernt Verschmutzungen tief aus den Fasern und bringt Ihre Teppiche zum Strahlen. Der Unterschied wird sofort sichtbar sein!',
     features: [

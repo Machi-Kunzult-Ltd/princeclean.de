@@ -73,7 +73,7 @@ export default function HomePage() {
             <div className="order-1 lg:order-2">
               <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-3xl shadow-2xl overflow-hidden">
                 <Image
-                  src="/images/services/carpet_cleaning.png"
+                  src="/images/services/gallery15.png"
                   alt="Professionelle Teppichreinigung"
                   fill
                   className="object-cover"
@@ -81,9 +81,9 @@ export default function HomePage() {
                   unoptimized
                 />
                 {/* Decorative Badge */}
-                <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+                {/* <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
                   Ab 7€/m²
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

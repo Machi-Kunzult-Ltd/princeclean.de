@@ -4,57 +4,118 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { X } from "lucide-react";
 
-// Placeholder gallery images - replace with your actual images
+// Gallery images with actual file references
 const galleryImages = [
   {
     id: 1,
-    src: "/images/gallery/carpet-before.jpg",
-    alt: "Weißer Teppich vorher",
+    src: "/images/gallery/beforeandafter.png",
+    alt: "Vorher-Nachher Vergleich",
     category: "before-after",
   },
   {
     id: 2,
-    src: "/images/gallery/carpet-after.jpg",
-    alt: "Weißer Teppich nachher",
+    src: "/images/gallery/beforeandafter5.png",
+    alt: "Vorher-Nachher Vergleich 5",
     category: "before-after",
   },
   {
     id: 3,
-    src: "/images/gallery/carpet-comparison.jpg",
-    alt: "Weißer Teppich vorher nachher",
+    src: "/images/gallery/beforeandafter7.png",
+    alt: "Vorher-Nachher Vergleich 7",
     category: "before-after",
   },
   {
     id: 4,
-    src: "/images/gallery/green-carpet-before.jpg",
-    alt: "Teppich grün vorher",
-    category: "before-after",
+    src: "/images/gallery/carper_cleaning2.png",
+    alt: "Teppichreinigung 2",
+    category: "process",
   },
   {
     id: 5,
-    src: "/images/gallery/green-carpet-after.jpg",
-    alt: "Teppich grün nachher",
-    category: "before-after",
+    src: "/images/gallery/gallery1.png",
+    alt: "Galerie Bild 1",
+    category: "process",
   },
   {
     id: 6,
-    src: "/images/gallery/cleaning-process.jpg",
-    alt: "Teppichreinigung in Aktion",
+    src: "/images/gallery/gallery2.png",
+    alt: "Galerie Bild 2",
     category: "process",
   },
   {
     id: 7,
-    src: "/images/gallery/drying.jpg",
-    alt: "Trocknung",
+    src: "/images/gallery/gallery3.png",
+    alt: "Galerie Bild 3",
     category: "process",
   },
   {
     id: 8,
-    src: "/images/gallery/finished.jpg",
-    alt: "Fertig zur Auslieferung",
+    src: "/images/gallery/gallery4.png",
+    alt: "Galerie Bild 4",
+    category: "process",
+  },
+  {
+    id: 9,
+    src: "/images/gallery/gallery5.png",
+    alt: "Galerie Bild 5",
+    category: "process",
+  },
+  {
+    id: 10,
+    src: "/images/gallery/gallery6.png",
+    alt: "Galerie Bild 6",
     category: "finished",
+  },
+  {
+    id: 11,
+    src: "/images/gallery/gallery8.png",
+    alt: "Galerie Bild 8",
+    category: "finished",
+  },
+  {
+    id: 12,
+    src: "/images/gallery/gallery9.png",
+    alt: "Galerie Bild 9",
+    category: "finished",
+  },
+  {
+    id: 13,
+    src: "/images/gallery/gallery10.png",
+    alt: "Galerie Bild 10",
+    category: "finished",
+  },
+  {
+    id: 14,
+    src: "/images/gallery/gallery11.png",
+    alt: "Galerie Bild 11",
+    category: "finished",
+  },
+  {
+    id: 15,
+    src: "/images/gallery/gallery12.png",
+    alt: "Galerie Bild 12",
+    category: "finished",
+  },
+  {
+    id: 16,
+    src: "/images/gallery/gallery13.png",
+    alt: "Galerie Bild 13",
+    category: "finished",
+  },
+  {
+    id: 17,
+    src: "/images/gallery/gallery7.png",
+    alt: "Galerie Bild 7",
+    category: "process",
+  },
+  {
+    id: 18,
+    src: "/images/gallery/gallery14.png",
+    alt: "Galerie Bild 7",
+    category: "process",
   },
 ];
 
@@ -126,61 +187,15 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          {/* Process Categories */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {/* Carpet Washing */}
-            <div className="text-center">
-              <div className="bg-[#1e3a8a] text-white px-6 py-4 rounded-2xl shadow-lg mb-6">
-                <h3 className="text-xl font-bold">Teppichwäsche</h3>
-              </div>
-              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg h-96">
-                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="text-6xl mb-4">🧽</div>
-                    <p className="text-gray-600">
-                      Professionelle Teppichwäsche
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Drying */}
-            <div className="text-center">
-              <div className="bg-[#1e3a8a] text-white px-6 py-4 rounded-2xl shadow-lg mb-6">
-                <h3 className="text-xl font-bold">Trocknung</h3>
-              </div>
-              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg h-96">
-                <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="text-6xl mb-4">🌬️</div>
-                    <p className="text-gray-600">Schonende Trocknung</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Ready for Delivery */}
-            <div className="text-center">
-              <div className="bg-[#1e3a8a] text-white px-6 py-4 rounded-2xl shadow-lg mb-6">
-                <h3 className="text-xl font-bold">Fertig zur Auslieferung</h3>
-              </div>
-              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg h-96">
-                <div className="w-full h-full bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="text-6xl mb-4">✨</div>
-                    <p className="text-gray-600">Perfekt sauber</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Before/After Comparison Title */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1e3a8a] mb-4">
               Der Vorher-Nachher-Vergleich
             </h2>
+            <p className="text-gray-600 text-lg">
+              Sehen Sie selbst die beeindruckenden Ergebnisse unserer
+              professionellen Reinigung
+            </p>
           </div>
 
           {/* Gallery Grid */}
@@ -191,18 +206,19 @@ export default function GalleryPage() {
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer aspect-[4/3] bg-gray-200"
                 onClick={() => openLightbox(image.id)}
               >
-                {/* Placeholder - Replace with actual images */}
-                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="text-4xl mb-2">🖼️</div>
-                    <p className="text-sm text-gray-600">{image.alt}</p>
-                  </div>
-                </div>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  unoptimized
+                />
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                  <span className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Ansehen
+                  <span className="text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Vergrößern
                   </span>
                 </div>
               </div>
@@ -210,12 +226,16 @@ export default function GalleryPage() {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center space-y-6">
+          <div className="text-center space-y-6 mt-16">
             <h3 className="text-2xl sm:text-3xl font-bold text-[#1e3a8a]">
               Sprechen Sie uns einfach an. Wir sind für Sie da!
             </h3>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Überzeugt von unserer Qualität? Kontaktieren Sie uns für ein
+              kostenloses Angebot.
+            </p>
             <Link href="/contact" className="btn btn-primary inline-flex">
-              Kontakt
+              Jetzt Kontakt aufnehmen
             </Link>
           </div>
         </div>
@@ -224,31 +244,33 @@ export default function GalleryPage() {
       {/* Lightbox Modal */}
       {selectedImage && selectedImageData && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
             aria-label="Close"
           >
             <X className="w-8 h-8" />
           </button>
 
           <div
-            className="relative max-w-5xl w-full"
+            className="relative max-w-6xl w-full h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-white rounded-xl overflow-hidden">
-              {/* Placeholder image in lightbox */}
-              <div className="w-full aspect-video bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4">🖼️</div>
-                  <p className="text-xl text-gray-600">
-                    {selectedImageData.alt}
-                  </p>
-                </div>
-              </div>
+            <div className="relative w-full h-full">
+              <Image
+                src={selectedImageData.src}
+                alt={selectedImageData.alt}
+                fill
+                sizes="90vw"
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-4 text-center">
+              <p className="text-lg">{selectedImageData.alt}</p>
             </div>
           </div>
         </div>

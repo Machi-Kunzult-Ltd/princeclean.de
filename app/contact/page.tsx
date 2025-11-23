@@ -1,40 +1,48 @@
 // app/contact/page.tsx
 
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
-import { siteConfig } from '@/config/site';
+import { useState } from "react";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
     privacy: false,
   });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('loading');
+    setStatus("loading");
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', phone: '', email: '', message: '', privacy: false });
+        setStatus("success");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          message: "",
+          privacy: false,
+        });
       } else {
-        setStatus('error');
+        setStatus("error");
       }
     } catch (error) {
-      setStatus('error');
+      setStatus("error");
     }
   };
 
@@ -48,7 +56,8 @@ export default function ContactPage() {
               Kontaktieren Sie uns
             </h1>
             <p className="text-lg sm:text-xl text-gray-600">
-              Gern können Sie Ihr Anliegen direkt an uns richten. Unser Service Team wird so schnell wie möglich Kontakt zu Ihnen aufnehmen.
+              Gern können Sie Ihr Anliegen direkt an uns richten. Unser Service
+              Team wird so schnell wie möglich Kontakt zu Ihnen aufnehmen.
             </p>
           </div>
         </div>
@@ -65,8 +74,10 @@ export default function ContactPage() {
               </h2>
               <p className="text-gray-600 mb-6">
                 <em>
-                  Gerne können Sie uns auch in englischer Sprache kontaktieren.<br />
-                  We would like to get to know you! You are also welcome to contact us in English.
+                  Gerne können Sie uns auch in englischer Sprache kontaktieren.
+                  <br />
+                  We would like to get to know you! You are also welcome to
+                  contact us in English.
                 </em>
               </p>
 
@@ -81,7 +92,9 @@ export default function ContactPage() {
                     required
                     className="form-input"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                   />
                 </div>
 
@@ -95,7 +108,9 @@ export default function ContactPage() {
                     required
                     className="form-input"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                   />
                 </div>
 
@@ -109,7 +124,9 @@ export default function ContactPage() {
                     required
                     className="form-input"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                   />
                 </div>
 
@@ -122,7 +139,9 @@ export default function ContactPage() {
                     required
                     className="form-textarea"
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                   />
                 </div>
 
@@ -133,13 +152,19 @@ export default function ContactPage() {
                       required
                       className="mt-1"
                       checked={formData.privacy}
-                      onChange={(e) => setFormData({ ...formData, privacy: e.target.checked })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, privacy: e.target.checked })
+                      }
                     />
                     <span className="text-sm text-gray-600">
-                      Mit dem Klick auf &quot;Anfrage senden&quot; stimmen Sie den{' '}
-                      <a href="/datenschutz" className="text-[#1e3a8a] underline">
+                      Mit dem Klick auf &quot;Anfrage senden&quot; stimmen Sie
+                      den{" "}
+                      <a
+                        href="/datenschutz"
+                        className="text-[#1e3a8a] underline"
+                      >
                         Datenschutzbestimmungen
-                      </a>{' '}
+                      </a>{" "}
                       zu. *
                     </span>
                   </label>
@@ -147,11 +172,11 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  disabled={status === 'loading'}
+                  disabled={status === "loading"}
                   className="btn btn-primary w-full"
                 >
-                  {status === 'loading' ? (
-                    'Wird gesendet...'
+                  {status === "loading" ? (
+                    "Wird gesendet..."
                   ) : (
                     <>
                       <span>Anfrage senden</span>
@@ -160,15 +185,16 @@ export default function ContactPage() {
                   )}
                 </button>
 
-                {status === 'success' && (
+                {status === "success" && (
                   <div className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-center">
                     Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.
                   </div>
                 )}
 
-                {status === 'error' && (
+                {status === "error" && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-center">
-                    Es gab einen Fehler. Bitte versuchen Sie es erneut oder rufen Sie uns an.
+                    Es gab einen Fehler. Bitte versuchen Sie es erneut oder
+                    rufen Sie uns an.
                   </div>
                 )}
               </form>
@@ -226,8 +252,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-[#1e3a8a] mb-2">Adresse</h3>
                     <address className="not-italic text-gray-700">
-                      {siteConfig.company.address.street}<br />
-                      {siteConfig.company.address.zip} {siteConfig.company.address.city}
+                      {siteConfig.company.address.street}
+                      <br />
+                      {siteConfig.company.address.zip}{" "}
+                      {siteConfig.company.address.city}
                     </address>
                   </div>
                 </div>
@@ -255,7 +283,10 @@ export default function ContactPage() {
 
               {/* WhatsApp Button */}
               <a
-                href={`https://wa.me/${siteConfig.company.whatsapp.replace(/\s/g, '')}`}
+                href={`https://wa.me/${siteConfig.company.whatsapp.replace(
+                  /\s/g,
+                  ""
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary w-full text-center"
