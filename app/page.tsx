@@ -3,6 +3,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -68,22 +69,17 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Image Placeholder */}
+            {/* Hero Image */}
             <div className="order-1 lg:order-2">
-              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl shadow-2xl overflow-hidden">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8">
-                  <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-4">
-                    🧽
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700 mb-2">
-                      Hero Image
-                    </div>
-                    <div className="text-xs sm:text-sm text-gray-500">
-                      Vorher/Nachher Teppichreinigung
-                    </div>
-                  </div>
-                </div>
+              <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+                <Image
+                  src="/images/services/carpet_cleaning.png"
+                  alt="Professionelle Teppichreinigung"
+                  fill
+                  className="object-cover"
+                  priority
+                  unoptimized
+                />
                 {/* Decorative Badge */}
                 <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
                   Ab 7€/m²
@@ -126,9 +122,18 @@ export default function HomePage() {
           {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {siteConfig.services.map((service) => (
-              <div key={service.id} className="service-card">
-                {/* Service Icon */}
-                <div className="service-icon">{service.icon}</div>
+              <div key={service.id} className="service-card overflow-hidden">
+                {/* Service Image */}
+                <div className="relative h-48 sm:h-56 overflow-hidden rounded-t-2xl -m-6 mb-4">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
 
                 {/* Service Content */}
                 <h3 className="service-title">{service.title}</h3>
@@ -250,22 +255,16 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Image Placeholder */}
+            {/* Right: Team/Cleaning Image */}
             <div className="order-1 lg:order-2">
-              <div className="relative w-full h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-green-100 to-green-50 rounded-3xl shadow-xl overflow-hidden">
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 sm:p-8">
-                  <div className="text-6xl sm:text-7xl md:text-8xl mb-4">
-                    👥
-                  </div>
-                  <div className="text-center">
-                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700 mb-2">
-                      Team Photo
-                    </div>
-                    <div className="text-xs sm:text-sm text-gray-500">
-                      Unser professionelles Team
-                    </div>
-                  </div>
-                </div>
+              <div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-3xl shadow-xl overflow-hidden">
+                <Image
+                  src="/images/services/Cleaning.png"
+                  alt="Professionelles Reinigungsteam"
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
               </div>
             </div>
           </div>

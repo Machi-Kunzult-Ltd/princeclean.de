@@ -1,13 +1,14 @@
 // app/pricing/page.tsx
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 const pricingCategories = [
   {
     title: "Teppichreinigung",
-    icon: "🧽",
+    image: "/images/services/carpet_cleaning.png",
     description: "Professionelle Reinigung für alle Teppicharten",
     priceStart: "ab 7€/m²",
     link: "/pricing/teppich",
@@ -15,7 +16,7 @@ const pricingCategories = [
   },
   {
     title: "Teppichbodenreinigung",
-    icon: "🏠",
+    image: "/images/services/carpet_cleaning.png",
     description: "Gründliche Reinigung für Ihre Teppichböden",
     priceStart: "ab 4,50€/m²",
     link: "/pricing/teppichboden",
@@ -23,7 +24,7 @@ const pricingCategories = [
   },
   {
     title: "Polsterreinigung",
-    icon: "🛋️",
+    image: "/images/services/upholstery_cleaning.png",
     description: "Schonende Reinigung für Polstermöbel",
     priceStart: "ab 29€",
     link: "/pricing/polster",
@@ -31,7 +32,7 @@ const pricingCategories = [
   },
   {
     title: "Textilreinigung",
-    icon: "👔",
+    image: "/images/services/dry_cleaning.png",
     description: "Professionelle Reinigung für Kleidung und Textilien",
     priceStart: "ab 3€",
     link: "/pricing/textil",
@@ -39,7 +40,7 @@ const pricingCategories = [
   },
   {
     title: "Weitere Dienstleistungen",
-    icon: "✨",
+    image: "/images/services/window_cleaning.png",
     description: "Fenster-, Haus- und Vorhangreinigung",
     priceStart: "ab 4,50€/m²",
     link: "/pricing/weitere",
@@ -51,7 +52,7 @@ export default function PricingOverviewPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-gray-50 to-gray-100 mt-20">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1e3a8a] mb-6">
@@ -75,14 +76,24 @@ export default function PricingOverviewPage() {
                 href={category.link}
                 className="group block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
               >
-                {/* Icon Header */}
-                <div
-                  className={`bg-gradient-to-br ${category.gradient} p-8 text-center`}
-                >
-                  <div className="text-6xl mb-4">{category.icon}</div>
-                  <h3 className="text-2xl font-bold text-white">
-                    {category.title}
-                  </h3>
+                {/* Image Header */}
+                <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden rounded-t-2xl">
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    unoptimized
+                  />
+                  {/* Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-60`}></div>
+                  {/* Title Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white text-center px-4">
+                      {category.title}
+                    </h3>
+                  </div>
                 </div>
 
                 {/* Content */}

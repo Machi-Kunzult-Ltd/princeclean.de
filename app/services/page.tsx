@@ -3,6 +3,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 
@@ -10,7 +11,7 @@ const servicesDetail = [
   {
     id: 'teppichboden',
     title: 'Teppichbodenreinigung',
-    icon: '🏠',
+    image: '/images/services/carpet_cleaning.png',
     description:
       'Geben Sie Ihren Teppichböden neue Frische und verlängern Sie ihre Lebensdauer! Unsere Teppichbodenreinigung entfernt Verschmutzungen tief aus den Fasern und bringt Ihre Böden zum Strahlen. Der Unterschied wird sofort sichtbar sein!',
     features: [
@@ -25,7 +26,7 @@ const servicesDetail = [
   {
     id: 'teppich',
     title: 'Teppichreinigung',
-    icon: '🧽',
+    image: '/images/services/carpet_cleaning.png',
     description:
       'Geben Sie Ihren Teppichen neue Frische und verlängern Sie ihre Lebensdauer! Unsere Teppichreinigung entfernt Verschmutzungen tief aus den Fasern und bringt Ihre Teppiche zum Strahlen. Der Unterschied wird sofort sichtbar sein!',
     features: [
@@ -40,7 +41,7 @@ const servicesDetail = [
   {
     id: 'polster',
     title: 'Polsterreinigung',
-    icon: '🛋️',
+    image: '/images/services/upholstery_cleaning.png',
     description:
       'Unsere Polsterreinigung erfolgt bei Ihnen vor Ort oder in unserem Geschäft – ganz nach Ihrem Wunsch. Wir reinigen Ihre Sofas, Sessel und Stühle professionell und schonend, um Ihre Polstermöbel frisch und sauber zu halten.',
     features: [
@@ -55,7 +56,7 @@ const servicesDetail = [
   {
     id: 'textil',
     title: 'Textilreinigung',
-    icon: '👔',
+    image: '/images/services/dry_cleaning.png',
     description:
       'Wir kümmern uns um die Wäscherei Ihrer Kleidung und Wohntextilien, von Anzügen bis hin zu großen Textilien wie Zelten. Bringen Sie uns Ihre Textilien und erleben Sie eine professionelle Reinigung, die alle Erwartungen erfüllt.',
     features: [
@@ -70,7 +71,7 @@ const servicesDetail = [
   {
     id: 'fenster',
     title: 'Fensterreinigung',
-    icon: '🪟',
+    image: '/images/services/window_cleaning.png',
     description:
       'Mit unserem Fensterreinigungsservice behalten Sie den perfekten Durchblick! Unsere erfahrenen Reinigungskräfte sorgen für streifenfreie Fenster in Ihrem Zuhause oder Büro. Wir kümmern uns sogar darum, Ihre Gardinen abzunehmen, zu reinigen und wieder aufzuhängen.',
     features: [
@@ -85,7 +86,7 @@ const servicesDetail = [
   {
     id: 'reinigung',
     title: 'Reinigungsservice',
-    icon: '🧹',
+    image: '/images/services/Cleaning.png',
     description:
       'Ob regelmäßige Unterhaltsreinigung für Ihre Immobilie oder eine gründliche Grundreinigung – als erfahrene cleaning company sind wir stets für Sie da. Unser Team erstellt gerne ein unverbindliches Angebot für eine Reinigung, die genau auf Ihre Bedürfnisse zugeschnitten ist.',
     features: [
@@ -103,7 +104,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-gray-50 to-gray-100 mt-20">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1e3a8a] mb-6">
@@ -126,9 +127,16 @@ export default function ServicesPage() {
                 key={service.id}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
               >
-                {/* Service Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center text-6xl">
-                  {service.icon}
+                {/* Service Image */}
+                <div className="h-64 sm:h-72 md:h-80 relative overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 rounded-t-2xl">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    unoptimized
+                  />
                 </div>
 
                 {/* Service Content */}

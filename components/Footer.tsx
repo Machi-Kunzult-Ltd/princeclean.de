@@ -1,6 +1,7 @@
 // app/(main)/_components/footer.tsx
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -11,15 +12,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#1e3a8a] font-bold text-xl">
-                PC
+            <Link href="/" className="flex items-center gap-3 mb-4 group">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 relative">
+                <Image
+                  src="/images/assets/logos/princeclean.png"
+                  alt="PrinceClean Logo"
+                  fill
+                  className="object-contain filter brightness-0 invert group-hover:opacity-90 transition-opacity"
+                />
               </div>
               <div>
-                <div className="font-bold text-lg">PrinceClean</div>
+                <div className="font-bold text-lg group-hover:opacity-90 transition-opacity">
+                  PrinceClean
+                </div>
                 <div className="text-xs opacity-80">Teppichreinigung</div>
               </div>
-            </div>
+            </Link>
             <p className="text-sm opacity-90 leading-relaxed">
               Professionelle Teppich-, Polster- und Textilreinigung in Berlin
               seit über 10 Jahren.

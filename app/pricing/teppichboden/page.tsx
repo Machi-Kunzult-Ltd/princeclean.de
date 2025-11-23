@@ -3,6 +3,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export default function TeppichbodenPage() {
@@ -49,17 +50,17 @@ export default function TeppichbodenPage() {
           </p>
         </div>
 
-        {/* Image Placeholder */}
+        {/* Image */}
         <div className="max-w-4xl mx-auto mb-8 sm:mb-12">
-          <div className="w-full h-48 sm:h-64 md:h-80 lg:h-96 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center">
-            <div className="text-center p-4">
-              <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-3 sm:mb-4">
-                🏠
-              </div>
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-700">
-                Teppichbodenreinigung
-              </div>
-            </div>
+          <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/services/carpet_cleaning.png"
+              alt="Teppichbodenreinigung"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+              className="object-cover"
+              unoptimized
+            />
           </div>
         </div>
 

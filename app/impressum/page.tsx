@@ -1,12 +1,10 @@
-// app/impressum/page.tsx
-
 import { siteConfig } from "@/config/site";
 
 export default function ImpressumPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-gray-100 mt-20">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1e3a8a] mb-6">

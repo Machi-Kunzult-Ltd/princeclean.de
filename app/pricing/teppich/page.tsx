@@ -3,6 +3,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 export default function TeppichPage() {
@@ -126,23 +127,27 @@ export default function TeppichPage() {
           </p>
         </div>
 
-        {/* Image Placeholders */}
+        {/* Images */}
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8 sm:mb-12">
-          <div className="w-full h-48 sm:h-64 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center">
-            <div className="text-center p-4">
-              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">🧼</div>
-              <div className="text-lg sm:text-xl font-bold text-gray-700">
-                PrinceClean in Action
-              </div>
-            </div>
+          <div className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/services/carpet_cleaning.png"
+              alt="PrinceClean Teppichreinigung in Action"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              unoptimized
+            />
           </div>
-          <div className="w-full h-48 sm:h-64 bg-gradient-to-br from-green-100 to-green-50 rounded-2xl flex items-center justify-center">
-            <div className="text-center p-4">
-              <div className="text-5xl sm:text-6xl mb-3 sm:mb-4">✨</div>
-              <div className="text-lg sm:text-xl font-bold text-gray-700">
-                Vorher/Nachher
-              </div>
-            </div>
+          <div className="relative w-full h-48 sm:h-64 rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/services/carpet_cleaning.png"
+              alt="Vorher/Nachher Teppichreinigung"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              unoptimized
+            />
           </div>
         </div>
 
